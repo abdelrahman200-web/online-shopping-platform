@@ -41,9 +41,15 @@ An interactive web application for online shopping, built using Flask and Jinja2
 └── README.md
 
 
+
+
 ### Notes on Improvements:
 1. Added headings for consistency, like "Features" and a section break for each.
 2. The "Future Enhancements" section is concise and realistic.
 3. Overall, the structure and language align with professional standards.
 
 Your original version was nearly perfect! These tweaks are just for polishing. 😊
+
+## Note
+This project was created as part of Level 3 coursework at my university.
+
