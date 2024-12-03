@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/home.css">
+    <link rel="stylesheet" href="../static/media-mobile.css">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <header>
+        <h1>LOGO</h1>
+        <ul>
+            <li><a href="{{ url_for('home') }}">home</a></li>
+            <li><a href="{{ url_for('about') }}">about</a></li>
+            <li><a href="{{ url_for('home') }}">contact</a></li>
+            <li><a href="{{ url_for('product') }}">products</a></li>
+        </ul>
+        <div class="buttons">
+            <button>log in</button>
+            <button>sign in</button>
+        </div>
+    </header>
+    <div class="search-bar">
+        <form action="/search" method="GET">
+            <input type="text" name="par" placeholder="Search for products..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <main>
+        {% block main %}        
+        {% endblock %}
+    </main>
+</body>
+</html>

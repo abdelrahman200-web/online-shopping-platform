@@ -1,0 +1,37 @@
+{% extends 'nav.html' %}
+{% block title %}
+    HOME PAGE
+{% endblock title %}
+{% block main %}
+<link rel="stylesheet" href="../static/home.css">
+<link rel="stylesheet" href="../static/media-mobile.css">
+
+<main>
+    
+    <div class="card card1">
+        <h2>{{products[num1].name}}</h2>
+        <p>{{products[num1].description}}</p>
+        <button>show more</button>
+    </div>
+     <div class="card card2">
+        <h2>{{products[num2].name}}</h2>
+        <p>{{products[num2].description}}</p>
+        <button>show more</button>
+    </div>
+    <div class="card card3">
+        <h2>{{products[num3].name}}</h2>
+        <p>{{products[num3].description}}</p>
+        <button>show more</button>
+    </div>
+    <div class="card card4">
+        <h2>{{products[num4].name}}</h2>
+        <p>{{products[num4].description}}</p>
+        <button>show more</button>
+    </div>
+    <div class="card card5">
+        <h2>{{products[num5].name}}</h2>
+        <p>{{products[num5].description}}</p>
+        <button>show more</button>
+    </div>
+</main>
+{% endblock %}

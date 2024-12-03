@@ -1,0 +1,25 @@
+{% extends 'nav.html' %}
+<link rel="stylesheet" href="../static/home.css">
+{% block main %} 
+<div class="section-container">
+    <div class="section About">
+        <div class="content">
+            <h2 class="A">About</h2><h2 class="us">us</h2>
+            <div class="description">
+                <p class="dis">{{discription}}</p>
+            </div>
+        </div>
+        <img src="../static/Screenshot 2024-09-23 131407.png" alt="About Us Image">
+    </div>
+    <hr>
+    <div class="section Our_Mission">
+        <div class="content">
+            <h2 class="A">Our</h2><h2 class="us">Mission</h2>
+            <div class="description">
+                <p class="dis">Our mission is simple: to provide our customers with an easy-to-navigate platform where they can shop for their favorite products with confidence. We aim to deliver top-notch customer service, excellent product quality, and fast, reliable shipping. Every product in our catalog is carefully selected to meet the needs and preferences of our diverse customer base.</p>
+            </div>
+        </div>
+        <img src="../static/mission-entreprise-scaled.webp" alt="Our Mission Image">
+    </div>
+</div>
+{% endblock %}
