@@ -1,6 +1,6 @@
-from flask import Flask,Blueprint,render_template,request
+from flask import Blueprint,render_template,request
 import random
-app=Flask(__name__)
+dp=Blueprint("pages",__name__)
 products = [
     {"name": "Laptop", "price": 999.99, "description": "A high-performance laptop for all your computing needs."},
     {"name": "Smartphone", "price": 699.99, "description": "A powerful smartphone with the latest features."},
@@ -34,25 +34,23 @@ products = [
 ]
 About_Us = "Welcome to online shopping, your one-stop online shopping destination. We are committed to offering a variety of high-quality products at affordable prices. Whether you're looking for the latest gadgets, stylish clothing, home essentials, or unique gifts, we have something for everyone. Our goal is to make shopping online a convenient, fun, and hassle-free experience for our customers."
 Our_Mission='Our mission is simple: to provide our customers with an easy-to-navigate platform where they can shop for their favorite products with confidence. We aim to deliver top-notch customer service, excellent product quality, and fast, reliable shipping. Every product in our catalog is carefully selected to meet the needs and preferences of our diverse customer base.'
-@app.route('/')
+@dp.route('/')
 def home():
     num1 = random.randint(0, 28)
     num2 = random.randint(0, 28)
     num3 = random.randint(0, 28)
     num4 = random.randint(0, 28)
     num5 = random.randint(0, 28)
-    return render_template("home.html",products=products,num1=num1,num2=num2,num3=num3,num4=num4,num5=num5)
-@app.route('/about')
+    return render_template("index.html",products=products,num1=num1,num2=num2,num3=num3,num4=num4,num5=num5)
+@dp.route('/about')
 def about():
     return render_template("about.html",discription=About_Us,Our_Mission=Our_Mission)
-@app.route('/product')
+@dp.route('/product')
 def product():
     return render_template("product.html",products=products)
-@app.route('/search', methods=['GET'])
+@dp.route('/search', methods=['GET'])
 def search():
     query = request.args.get('par', '').lower()
     filtered_products = [product for product in products if query in product['name'].lower()]
     return render_template('search.html', products=filtered_products, query=query)
 
-if __name__ =="__main__":
-    app.run(debug=True)
